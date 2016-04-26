@@ -1,0 +1,29 @@
+<ion-view title="Services" hide-nav-bar="true" id="page9" style="background-color:#B4D44E;">
+    <ion-content padding="true" class="manual-ios-statusbar-padding">
+        <div>
+            <img src="img/hQo8Q8TcRiULBp5EgiQm_LoadSteamoFullLogo.png" width="75%" height="auto" style="display: block; margin-left: auto; margin-right: auto;">
+        </div>
+        <div>
+            <img src="img/TaZQXfztSYaupydWskaK_Photo Mar 16, 11 47 11 AM.jpg" width="100%" height="auto" style="display: block; margin-left: auto; margin-right: auto;  border-radius: 8px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 2);">
+        </div>
+        <form class="list">
+            <label class="item item-select" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 2); border-radius: 8px;">
+                <span class="input-label">Services</span>
+                <select ng-options="item as item.name + ' '+item.price for item in services" ng-model="selected"></select>
+            </label>
+        </form>
+        <h4 id="services-heading1" style="color:#FFFFFF;">Corporate Events</h4>
+        <div id="services-markdown3" style="color:#FFFFFF;">
+            <p>Great service to provide your employees or coworkers. Freeing their time up on the weekend to enjoy their friends and family. Happy worker is a productive worker.</p>
+        </div>
+        <h4 id="services-heading2" style="color:#FFFFFF;">Fleet Services</h4>
+        <div id="services-markdown4" style="color:#FFFFFF;">
+            <p>On-site Fleet Washing, Available 24 hours, 7 days a week, Servicing Any Size of Fleet, 100% Satisfaction Guaranteed.</p>
+        </div>
+        <h4 id="services-heading3" style="color:#FFFFFF;">Preparation for Sale</h4>
+        <div id="services-markdown5" style="color:#FFFFFF;">
+            <p>A clean car will always fetch more money and A clean car shows a buyer that you took care of it, and it’s less likely that you’re hiding problems. Have the carpeting and upholstery steamed, the wheels and tires cleaned, and dust and grime
+                removed from the nooks and crannies in the dashboard.</p>
+        </div>
+    </ion-content>
+</ion-view>

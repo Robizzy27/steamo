@@ -1,0 +1,147 @@
+{
+  "regular": {
+    "type": "Regular Size Car",
+    "wash": {
+      "basic": {
+        "wash": "Basic Hand Wash",
+        "time": "25 Mins",
+        "features": ["Exterior Clean", "Showroom Shine", "Windows Cleaned", "Tire Cleaned/Shined"],
+        "price": 19.99
+      },
+      "premium": {
+        "wash": "Premium Wash",
+        "time": "45 Mins",
+        "features": ["Basic Hand Wash", "Interior Vacuumed", "Door Jams", "Dash/ Console Wiped", "Scent"],
+        "price": 29.99
+      },
+      "platinum": {
+        "wash": "Platinum Wash",
+        "time": "60 Mins",
+        "features": ["Premium Wash", "Upholstery Steamed", "Leather Santized", "Air Vents Blown Out", "Dog Hair Removal", "Trunk Cleaned"],
+        "price": 39.99
+      },
+      "detail": {
+        "wash": "Detailing",
+        "time": "120-180 Mins",
+        "features": ["Platinum Wash", "5 month Wax", "Stain Removal", "Chrome Polish", "Odor Removal", "Headliner Steamed", "Hard Water Removal"],
+        "price": 149.99
+      }
+    }
+  },
+  "compactsuv": {
+    "type": "Compact SUV",
+    "wash": {
+      "basic": {
+        "wash": "Basic Hand Wash",
+        "time": "25 Mins",
+        "features": ["Exterior Clean", "Showroom Shine", "Windows Cleaned", "Tire Cleaned/Shined"],
+        "price": 24.99
+      },
+      "premium": {
+        "wash": "Premium Wash",
+        "time": "45 Mins",
+        "features": ["Basic Hand Wash", "Interior Vacuumed", "Door Jams", "Dash/ Console Wiped", "Scent"],
+        "price": 34.99
+      },
+      "platinum": {
+        "wash": "Platinum Wash",
+        "time": "60 Mins",
+        "features": ["Premium Wash", "Upholstery Steamed", "Leather Santized", "Air Vents Blown Out", "Dog Hair Removal", "Trunk Cleaned"],
+        "price": 44.99
+      },
+      "detail": {
+        "wash": "Detailing",
+        "time": "120-180 Mins",
+        "features": ["Platinum Wash", "5 month Wax", "Stain Removal", "Chrome Polish", "Odor Removal", "Headliner Steamed", "Hard Water Removal"],
+        "price": 179.99
+      }
+    }
+  },
+  "minivan": {
+    "type": "Minivan",
+    "wash": {
+      "basic": {
+        "wash": "Basic Hand Wash",
+        "time": "25 Mins",
+        "features": ["Exterior Clean", "Showroom Shine", "Windows Cleaned", "Tire Cleaned/Shined"],
+        "price": 24.99
+      },
+      "premium": {
+        "wash": "Premium Wash",
+        "time": "45 Mins",
+        "features": ["Basic Hand Wash", "Interior Vacuumed", "Door Jams", "Dash/ Console Wiped", "Scent"],
+        "price": 34.99
+      },
+      "platinum": {
+        "wash": "Platinum Wash",
+        "time": "60 Mins",
+        "features": ["Premium Wash", "Upholstery Steamed", "Leather Santized", "Air Vents Blown Out", "Dog Hair Removal", "Trunk Cleaned"],
+        "price": 44.99
+      },
+      "detail": {
+        "wash": "Detailing",
+        "time": "120-180 Mins",
+        "features": ["Platinum Wash", "5 month Wax", "Stain Removal", "Chrome Polish", "Odor Removal", "Headliner Steamed", "Hard Water Removal"],
+        "price": 179.99
+      }
+    }
+  },
+  "pickuptruck": {
+    "type": "Pickup Truck",
+    "wash": {
+      "basic": {
+        "wash": "Basic Hand Wash",
+        "time": "25 Mins",
+        "features": ["Exterior Clean", "Showroom Shine", "Windows Cleaned", "Tire Cleaned/Shined"],
+        "price": 24.99
+      },
+      "premium": {
+        "wash": "Premium Wash",
+        "time": "45 Mins",
+        "features": ["Basic Hand Wash", "Interior Vacuumed", "Door Jams", "Dash/ Console Wiped", "Scent"],
+        "price": 34.99
+      },
+      "platinum": {
+        "wash": "Platinum Wash",
+        "time": "60 Mins",
+        "features": ["Premium Wash", "Upholstery Steamed", "Leather Santized", "Air Vents Blown Out", "Dog Hair Removal", "Trunk Cleaned"],
+        "price": 44.99
+      },
+      "detail": {
+        "wash": "Detailing",
+        "time": "120-180 Mins",
+        "features": ["Platinum Wash", "5 month Wax", "Stain Removal", "Chrome Polish", "Odor Removal", "Headliner Steamed", "Hard Water Removal"],
+        "price": 179.99
+      }
+    }
+  },
+  "cargotruck": {
+    "type": "Cargo Truck",
+    "wash": {
+      "basic": {
+        "wash": "Basic Hand Wash",
+        "time": "25 Mins",
+        "features": ["Exterior Clean", "Showroom Shine", "Windows Cleaned", "Tire Cleaned/Shined"],
+        "price": 39.99
+      },
+      "premium": {
+        "wash": "Premium Wash",
+        "time": "45 Mins",
+        "features": ["Basic Hand Wash", "Interior Vacuumed", "Door Jams", "Dash/ Console Wiped", "Scent"],
+        "price": 49.99
+      },
+      "platinum": {
+        "wash": "Platinum Wash",
+        "time": "60 Mins",
+        "features": ["Premium Wash", "Upholstery Steamed", "Leather Santized", "Air Vents Blown Out", "Dog Hair Removal", "Trunk Cleaned"],
+        "price": 59.99
+      },
+      "detail": {
+        "wash": "Detailing",
+        "time": "120-180 Mins",
+        "features": ["Platinum Wash", "5 month Wax", "Stain Removal", "Chrome Polish", "Odor Removal", "Headliner Steamed", "Hard Water Removal"],
+        "price": 229.99
+      }
+    }
+  }
+}

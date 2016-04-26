@@ -1,0 +1,179 @@
+<ion-view title="Booking" hide-nav-bar="true" id="page8" style="background-color:#B4D44E;">
+    <ion-content padding="true" class="manual-ios-statusbar-padding">
+        <div>
+            <img src="img/REr1de1zTC6V4cA0fRdQ_LoadSteamoFullLogo.png" width="75%" height="auto" style="display: block; margin-left: auto; margin-right: auto;">
+        </div>
+
+        <form class="list">
+            <div class="list card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 2); border-radius: 8px;">
+                <div class="item item-divider">Select your Vehicle</div>
+                <div class="item item-body">
+                    <form class="list">
+                        <label class="item item-select">
+                            <span class="input-label">Make</span>
+                            <select>
+                                <option></option>
+                                <option>Acura</option>
+                                <option>Alpha Romeo</option>
+                                <option>AM General</option>
+                                <option>Aston Martin</option>
+                                <option>Audi</option>
+                            </select>
+                        </label>
+                        <label class="item item-select">
+                            <span class="input-label">Model</span>
+                            <select>
+                                <option></option>
+                                <option>CL</option>
+                                <option>ILX</option>
+                                <option>Integra</option>
+                                <option>MDX</option>
+                            </select>
+                        </label>
+                        <label class="item item-select">
+                            <span class="input-label">Year</span>
+                            <select>
+                                <option></option>
+                                <option>2005 and Newer</option>
+                                <option>1995 - 2005</option>
+                                <option>1985 - 1995</option>
+                                <option>Classic</option>
+                            </select>
+                        </label>
+                    </form>
+                </div>
+            </div>
+            <label class="item item-select" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 2); border-radius: 8px;">
+                <span class="input-label">Select your Vehicle Type</span>
+                <select ng-options="item as item.type for item in vehiclepackages" ng-model="vehicletype">
+                </select>
+            </label>
+
+            <label class="item item-select" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 2); border-radius: 8px;">
+                <span class="input-label">Select you preferred Wash Type</span>
+                <select ng-model="wash" ng-options="item as item.wash for item in vehicletype.wash"></select>
+            </label>
+
+            <!-- <label class="item item-select">
+                <span class="input-label">Select you preferred Wash Type</span>
+                <select id="wash" ng-model="wash">
+                    <option></option>
+                    <option>Basic</option>
+                    <option>Premium</option>
+                    <option>Platinum</option>
+                    <option>Detail</option>
+                </select>
+            </label> -->
+            <div class="package basic" ng-show="wash=='Basic Hand Wash'">
+                <div class="wash-type">Basic</div>
+                <div class='price'>{{price}}</div>
+                <div class='time'>25 Mins</div>
+                <div>Exterior Clean</div>
+                <div>Showroom Shine</div>
+                <div>Windows Cleaned</div>
+                <div>Tire Cleaned/Shined</div>
+            </div>
+            <div class="package premium" ng-show="wash=='Premium'">
+                <div class="wash-type">Premium</div>
+                <div class='price'>{{price}}</div>
+                <div class='time'>45 Mins</div>
+                <div>Exterior Clean</div>
+                <div>Showroom Shine</div>
+                <div>Windows Cleaned</div>
+                <div>Tire Cleaned/Shined</div>
+            </div>
+            <div class="package platinum" ng-show="selected.wash=='Platinum'">
+                <div class="wash-type">Platinum</div>
+                <div class='price'>{{price}}</div>
+                <div class='time'>60 Mins</div>
+                <div>Exterior Clean</div>
+                <div>Showroom Shine</div>
+                <div>Windows Cleaned</div>
+                <div>Tire Cleaned/Shined</div>
+            </div>
+            <div class="package detail" ng-show="selected.wash=='detail'">
+                <div class="wash-type">Detail</div>
+                <div class='price'>{{price}}</div>
+                <div class='time'>150 Mins</div>
+                <div>Exterior Clean</div>
+                <div>Showroom Shine</div>
+                <div>Windows Cleaned</div>
+                <div>Tire Cleaned/Shined</div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+            <div class="list card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 2); border-radius: 8px;">
+                <table class="table table-bordered" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 2); border-radius: 8px; width: 100%;">
+                  <thead>
+                    <tr bgcolor="#e5e5e5">
+                      <th>Basic Wash</th>
+                      <th>Premium Wash</th>
+                      <th>Platinum Wash</th>
+                      <th>Detailing</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr align="center">
+                      <td>25 Mins</td>
+                      <td>45 Mins</td>
+                      <td>60 Mins</td>
+                      <td>120 Mins (2-3 Hrs)</td>
+                    </tr>
+                    <tr align="center">
+                      <td>Exterior Wash</td>
+                      <td>Basic Wash</td>
+                      <td>Premium Wash</td>
+                      <td>Platinum Wash</td>
+                    </tr>
+                    <tr align="center">
+                      <td>Showroom Shine</td>
+                      <td>Interior Vacuumed</td>
+                      <td>Upholstery Steamed</td>
+                      <td>5 month Wax</td>
+                    </tr>
+                    <tr align="center">
+                      <td>Windows Cleaned</td>
+                      <td>Door Jams</td>
+                      <td>Leather Sanitized</td>
+                      <td>Stain Removal</td>
+                    </tr>
+                    <tr align="center">
+                      <td>Tire Cleaned/ Shined</td>
+                      <td>Dash/ Console Wiped</td>
+                      <td>Air Vents blown out</td>
+                      <td>Chrome Polish</td>
+                    </tr>
+                    <tr align="center">
+                      <td></td>
+                      <td>Scent</td>
+                      <td>Dog hair Removal</td>
+                      <td>Odor Removal</td>
+                    </tr>
+                    <tr align="center">
+                      <td></td>
+                      <td></td>
+                      <td>Trunk Cleaned</td>
+                      <td>Headliner Steamed</td>
+                    </tr>
+                    <tr align="center">
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td>Hard Water Removal</td>
+                    </tr>
+                  </tbody>
+  </table>
+            </div>
+        </form>
+        <a ui-sref="tabsController.services" id="booking-button16" style="font-weight:600;color:#FFFFFF;" class="button button-positive button-large button-block button-clear">Submit</a>
+    </ion-content>
+</ion-view>
