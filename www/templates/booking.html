@@ -28,21 +28,17 @@
       </label>
     </div>
 
-    <div class="card package-detail" style="display: block; margin-left: auto; margin-right: auto;  border-radius: 8px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 2);">
-      <div class='item'>
-        <div class="row">
-          <div class="col col-50">Time: <span class='time'>{{wash.time}}</span></div>
-          <div class="col col-50">Price: <span class='price'>${{wash.price}}</span></div>
-        </div>
-      </div>
-    </div>
-    <h3>Total: <span class='price'>{{total_price | currency}}</span></h3>
-
     <div class="card" ng-show='wash' style="display: block; margin-left: auto; margin-right: auto;  border-radius: 8px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 2);">
       <div class='item' style="display: block; margin-left: auto; margin-right: auto;  border-radius: 8px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 2);">
-        <h2 style="background-color: #B4D44E; color: #FFFFFF; display: block; margin-left: auto; margin-right: auto; border-radius: 5px; text-align: center;">Service Add-ons</h2>
+        <div style="background-color: #B4D44E; color: #FFFFFF; display: block; margin-left: auto; margin-right: auto; border-radius: 5px; text-align: center; padding: 5px;">
+          <h2 style="color: #FFFFFF;">Time Required: {{wash.time}}</h2>
+          <h2 style="color: #FFFFFF;">Wash Package Price: {{wash.price | currency}}</h2>
+          <h2 style="color: #FFFFFF;">Service Add-ons Price: {{total_price | currency}}</h2>
+          <h1 style="color: #FFFFFF;">{{wash.price + total_price | currency}}</h1>
+        </div>
+
         <ul class="list">
-          <li class="item item-toggle" ng-repeat="feature in wash.features">{{feature}}
+          <li class="item item-toggle" ng-repeat="feature in wash.features">{{feature}}  <span style="font-style: italic; font-size: 75%;">  (included in package selected)</span>
             <label class="toggle toggle-assertive">
               <input type="checkbox" ng-model="features">
               <div class="track">
