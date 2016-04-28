@@ -38,7 +38,7 @@
         </div>
 
         <ul class="list">
-          <li class="item item-toggle" ng-repeat="feature in wash.features">{{feature}}  <span style="font-style: italic; font-size: 75%;">  (included in package selected)</span>
+          <li class="item item-toggle" ng-repeat="feature in wash.features">{{feature}}  <div style="font-style: italic; font-size: 75%;">  (included in package selected)</div>
             <label class="toggle toggle-assertive">
               <input type="checkbox" ng-model="features">
               <div class="track">
@@ -48,6 +48,7 @@
           </li>
           <li class="item item-toggle">
             Rim and Tire Dressing
+            <div style="font-size: 85%;">$7.99</div>
             <label class="toggle toggle-assertive">
               <input type="checkbox" ng-model="rims" ng-change='recalculate("rims",rims)'>
               <div class="track">
@@ -57,6 +58,7 @@
           </li>
           <li class="item item-toggle">
             Interior Vacuum
+            <div style="font-size: 85%;">$7.99</div>
             <label class="toggle toggle-assertive">
               <input type="checkbox" ng-model="interior" ng-change='recalculate("interior",interior)'>
               <div class="track">
@@ -66,6 +68,7 @@
           </li>
           <li class="item item-toggle">
             Trunk Vacuum
+            <div style="font-size: 85%;">$4.99</div>
             <label class="toggle toggle-assertive">
               <input type="checkbox" ng-model="trunk" ng-change='recalculate("trunk",trunk)'>
               <div class="track">
@@ -75,6 +78,7 @@
           </li>
           <li class="item item-toggle">
             Dashboard Clean
+            <div style="font-size: 85%;">$4.99</div>
             <label class="toggle toggle-assertive">
               <input type="checkbox" ng-model="dashboard" ng-change='recalculate("dashboard",dashboard)'>
               <div class="track">
@@ -84,6 +88,7 @@
           </li>
           <li class="item item-toggle">
             Air Freshener
+            <div style="font-size: 85%;">$3.99</div>
             <label class="toggle toggle-assertive">
               <input type="checkbox" ng-model="freshener" ng-change='recalculate("freshener",freshener)'>
               <div class="track">
@@ -93,6 +98,7 @@
           </li>
           <li class="item item-toggle">
             Triple Coat Hand Wax
+            <div style="font-size: 85%;">$24.99</div>
             <label class="toggle toggle-assertive">
               <input type="checkbox" ng-model="wax" ng-change='recalculate("wax",wax)'>
               <div class="track">
@@ -102,6 +108,7 @@
           </li>
           <li class="item item-toggle">
             Exterior Vinyl Protectant
+            <div style="font-size: 85%;">$6.99</div>
             <label class="toggle toggle-assertive">
               <input type="checkbox" ng-model="exterior" ng-change='recalculate("exterior",exterior)'>
               <div class="track">
@@ -111,6 +118,7 @@
           </li>
           <li class="item item-toggle">
             Engine Steam Clean
+            <div style="font-size: 85%;">$59.99</div>
             <label class="toggle toggle-assertive">
               <input type="checkbox" ng-model="engine" ng-change='recalculate("engine",engine)'>
               <div class="track">
