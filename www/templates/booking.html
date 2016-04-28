@@ -1,34 +1,130 @@
 <ion-view title="Booking" hide-nav-bar="true" id="page8" style="background-color:#B4D44E;">
-    <ion-content padding="true" class="manual-ios-statusbar-padding">
-        <div>
-            <img src="img/REr1de1zTC6V4cA0fRdQ_LoadSteamoFullLogo.png" width="75%" height="auto" style="display: block; margin-left: auto; margin-right: auto;">
-        </div>
-        <div class="spacer" style="width: 300px; height: 14px;"></div>
-        <div>
-            <img src="img/TaZQXfztSYaupydWskaK_Photo Mar 16, 11 47 11 AM.jpg" width="100%" height="auto" style="display: block; margin-left: auto; margin-right: auto;  border-radius: 8px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 2);">
-        </div>
-        <div class="spacer" style="width: 300px; height: 14px;"></div>
-        <div>
-            <form class="list">
-                <div class="styled-select">
-                    <span>
-                        <select ng-options="vehicle as vehicle.type for vehicle in vehiclepackages" ng-model="vehicletype"><option value="">Vehicle Type</option></select>
-                    </span>
-                    <span>
-                        <select ng-options="wash as wash.wash for wash in vehicletype.wash" ng-model="wash"><option value="">Wash Package</option></select>
-                    </span>
-                </div>
-            </form>
-        </div>
-        <div class="spacer" style="width: 100%; height: 14px;"></div>
-        <div class="row">
-            <div class="col col-50">Time: {{wash.time}}</div>
-            <div class="col col-50">Price: ${{wash.price}}</div>
-        </div>
+  <ion-content padding="true" class="manual-ios-statusbar-padding">
+    <div>
+      <img src="img/REr1de1zTC6V4cA0fRdQ_LoadSteamoFullLogo.png" width="75%" height="auto" style="display: block; margin-left: auto; margin-right: auto;">
+    </div>
 
-            Features:
-            <div ng-repeat="feature in wash.features">{{feature}}</div>
-        
-        <a ui-sref="tabsController.services" id="booking-button16" style="font-weight:600;color:#FFFFFF;" class="button button-positive button-large button-block button-clear">Submit</a>
-    </ion-content>
+    <div class="spacer" style="width: 300px; height: 14px;"></div>
+
+    <div>
+      <img src="img/TaZQXfztSYaupydWskaK_Photo Mar 16, 11 47 11 AM.jpg" width="100%" height="auto" style="display: block; margin-left: auto; margin-right: auto;  border-radius: 8px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 2);">
+    </div>
+
+    <div class="spacer" style="width: 300px; height: 14px;"></div>
+
+    <div class="list">
+      <label class="item item-input item-select" style="display: block; margin-left: auto; margin-right: auto; border-radius: 8px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 2);">
+        <div class="input-label">
+          Vehicle Type:
+        </div>
+        <select ng-options="vehicle as vehicle.type for vehicle in vehiclepackages" ng-model="vehicletype"><option></option></select>
+      </label>
+      <div class="spacer" style="width: 300px; height: 7px;"></div>
+      <label class="item item-input item-select" style="display: block; margin-left: auto; margin-right: auto; border-radius: 8px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 2);">
+        <div class="input-label">
+          Package Type:
+        </div>
+        <select ng-options="wash as wash.wash for wash in vehicletype.wash" ng-model="wash"><option></option></select>
+      </label>
+    </div>
+
+    <div class="card package-detail" style="display: block; margin-left: auto; margin-right: auto;  border-radius: 8px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 2);">
+      <div class='item'>
+        <div class="row">
+          <div class="col col-50">Time: <span class='time'>{{wash.time}}</span></div>
+          <div class="col col-50">Price: <span class='price'>${{wash.price}}</span></div>
+        </div>
+      </div>
+    </div>
+    <h3>Total: <span class='price'>{{total_price | currency}}</span></h3>
+
+    <div class="card" ng-show='wash' style="display: block; margin-left: auto; margin-right: auto;  border-radius: 8px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 2);">
+      <div class='item' style="display: block; margin-left: auto; margin-right: auto;  border-radius: 8px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 2);">
+        <h2 style="background-color: #B4D44E; color: #FFFFFF; display: block; margin-left: auto; margin-right: auto; border-radius: 5px; text-align: center;">Service Add-ons</h2>
+        <ul class="list">
+          <li class="item item-toggle" ng-repeat="feature in wash.features">{{feature}}
+            <label class="toggle toggle-assertive">
+              <input type="checkbox" ng-model="features">
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </li>
+          <li class="item item-toggle">
+            Rim and Tire Dressing
+            <label class="toggle toggle-assertive">
+              <input type="checkbox" ng-model="rims" ng-change='recalculate("rims",rims)'>
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </li>
+          <li class="item item-toggle">
+            Interior Vacuum
+            <label class="toggle toggle-assertive">
+              <input type="checkbox" ng-model="interior" ng-change='recalculate("interior",interior)'>
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </li>
+          <li class="item item-toggle">
+            Trunk Vacuum
+            <label class="toggle toggle-assertive">
+              <input type="checkbox" ng-model="trunk" ng-change='recalculate("trunk",trunk)'>
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </li>
+          <li class="item item-toggle">
+            Dashboard Clean
+            <label class="toggle toggle-assertive">
+              <input type="checkbox" ng-model="dashboard" ng-change='recalculate("dashboard",dashboard)'>
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </li>
+          <li class="item item-toggle">
+            Air Freshener
+            <label class="toggle toggle-assertive">
+              <input type="checkbox" ng-model="freshener" ng-change='recalculate("freshener",freshener)'>
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </li>
+          <li class="item item-toggle">
+            Triple Coat Hand Wax
+            <label class="toggle toggle-assertive">
+              <input type="checkbox" ng-model="wax" ng-change='recalculate("wax",wax)'>
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </li>
+          <li class="item item-toggle">
+            Exterior Vinyl Protectant
+            <label class="toggle toggle-assertive">
+              <input type="checkbox" ng-model="exterior" ng-change='recalculate("exterior",exterior)'>
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </li>
+          <li class="item item-toggle">
+            Engine Steam Clean
+            <label class="toggle toggle-assertive">
+              <input type="checkbox" ng-model="engine" ng-change='recalculate("engine",engine)'>
+              <div class="track">
+                <div class="handle"></div>
+              </div>
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <a ui-sref="tabsController.services" id="booking-button16" style="font-weight:600; color:#B4D44E;" class="button button-positive button-large button-block button-dark">Submit</a>
+  </ion-content>
 </ion-view>

@@ -8052,8 +8052,8 @@ input:checked + .checkbox-icon:after {
   background-color: #11c1f3; }
 
 .toggle.toggle-assertive input:checked + .track {
-  border-color: #ef473a;
-  background-color: #ef473a; }
+  border-color: #B4D44E;
+  background-color: #B4D44E; }
 
 .toggle.toggle-balanced input:checked + .track {
   border-color: #33cd5f;
