@@ -3,7 +3,18 @@
         <div>
             <img src="img/LoozPpG2QbO76AtpUOY6_LoadSteamoFullLogo.png" width="100%" height="auto" style="display: block; margin-left: auto; margin-right: auto;">
         </div>
-        <form class="list">
+        <div class="list list-inset">
+          <label class="item item-input">
+              <input type="text" placeholder="Username" ng-model="data.username">
+          </label>
+          <label class="item item-input">
+              <input type="password" placeholder="Password" ng-model="data.password">
+          </label>
+      </div>
+      <button class="button button-block button-calm" ng-click="login()">Login</button>
+      <a class="facebook-sign-in button button-block" ng-click="facebookSignIn()">Login with Facebook</a>
+      <!-- <a class="button button-assertive button-block button-outline" ng-click="showLogOutMenu()">Log Out</a> -->
+        <!-- <form class="list">
             <ion-list>
                 <label class="item item-input">
                     <span class="input-label">Username</span>
@@ -18,7 +29,7 @@
             <a ui-sref="tabsController.home" id="login-button17" style="font-weight:600;color:#B4D44E;border-radius:500px 500px 500px 500px;" class="button button-light  button-block">Log in</a>
             <h4 id="login-heading6" style="color:#FFFFFF;font-weight:600;text-align:center;">or</h4>
             <a ui-sref="tabsController.signup" id="login-button25" style="font-weight:600;color:#B4D44E;border-radius:500px 500px 500px 500px;" class="button button-stable  button-block">Create Account</a>
-        </form>
+        </form> -->
         <div class="button-bar"></div>
     </ion-content>
 </ion-view>
