@@ -30,9 +30,10 @@ angular.module('app.services', [])
       return promise;
     }
   }
-}),
-('UserService', function() {
-  // For the purpose of this example I will store user data on ionic local storage but you should save it on a database
+})
+
+.service('UserService', function() {
+  // For the purpose of this app I will store user data on ionic local storage but should save it on a database
   var setUser = function(user_data) {
     window.localStorage.starter_facebook_user = JSON.stringify(user_data);
   };
