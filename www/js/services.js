@@ -1,7 +1,26 @@
 angular.module('app.services', [])
 
-.factory('BlankFactory', [function(){
+// .factory('BlankFactory', [function(){
+//
+// }])
 
+.factory("postFactory", ["$firebaseArray", "$firebaseObject", function($firebaseArray, $firebaseObject){
+  var ref = new Firebase("https://nf.firebaseio.com");
+  var posts = $firebaseArray(ref)
+  var Post = {
+    all: posts,
+    create: function (post) {
+      return posts.$add(post)
+    },
+    getPost: function (id) {
+      var post =  $firebaseObject(ref.child(id))
+      return post
+    },
+    remove: function (post) {
+      return post.$remove(post)
+    }
+  };
+  return Post;
 }])
 
 // .service('BlankService', [function(){

@@ -104,15 +104,36 @@ angular.module('app.controllers', [])
   }
 })
 
-.controller('servicesCtrl', function($scope) {
-  $scope.services = [];
-
-  var myFirebaseRef = new Firebase("https://steamo.firebaseio.com/services");
-
-  myFirebaseRef.on('child_added', function(snapshot, prevChildKey) {
-    $scope.services.push(snapshot.val());
-  });
-})
+// .controller('servicesCtrl', [
+//   "$scope", "testimonialFactory", function($scope, testimonialFactory){
+//     $scope.posts = testimonialFactory.all;
+//
+//     $scope.addTestimonial = function(){
+//
+//       if(!$scope.name || $scope.name === '') {return;}
+//
+//       testimonialFactory.create({
+//         name: $scope.name,
+//         testimonial: $scope.testimonial
+//       }).then(function(testimonial){
+//
+//       });
+//
+//       $scope.title = '';
+//       $scope.testimonial = '';
+//     };
+//
+//       var testimonialToUpdate = testimonialFactory.getPost(testimonial.$id)
+//       testimonialToUpdate.name = testimonial.name
+//       testimonialToUpdate.testimonial = testimonial.testimonial
+//       testimonialToUpdate.$save()
+//     };
+//
+//   var myFirebaseRef = new Firebase("https://steamo.firebaseio.com/services");
+//   myFirebaseRef.on('child_added', function(snapshot, prevChildKey) {
+//     $scope.services.push(snapshot.val());
+//   });
+// })
 
 .controller('contactCtrl', function($scope) {
 
@@ -268,4 +289,35 @@ angular.module('app.controllers', [])
 
 // .controller('signupCtrl', function($scope) {
 //
+// })
+
+// .controller('mapCtrl', function($scope, $ionicLoading) {
+//
+//   $scope.initialise = function() {
+//     console.log("In Google.maps.event.addDomListener");
+//     var myLatlng = new google.maps.LatLng(37.3000, -120.4833);
+//     var mapOptions = {
+//       center: myLatlng,
+//       zoom: 16,
+//       mapTypeId: google.maps.MapTypeId.ROADMAP
+//     };
+//
+//
+//     console.log(mapOptions);
+//     var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+//
+//     navigator.geolocation.getCurrentPosition(function(pos) {
+//         console.log(pos);
+//         map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
+//         var myLocation = new google.maps.Marker({
+//             position: new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude),
+//             map: map,
+//             title: "My Location"
+//         });
+//     });
+//
+//     $scope.map = map;
+//   };
+//
+//   google.maps.event.addDomListener(document.getElementById("map"), 'load', $scope.initialise());
 // })
