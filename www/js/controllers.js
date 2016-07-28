@@ -135,6 +135,15 @@ angular.module('app.controllers', [])
 //   });
 // })
 
+// .controller(“mainCtrl”,
+// function($scope,$state,$ionicActionSheet,$firebaseArray) {
+// var myFirebaseRef = new Firebase("https://steamo.firebaseio.com/testimonials");
+// $scope.testimonials = $firebaseArray(testimonialRef)
+// $scope.testimonials.$add({testimonial: imageData})
+
+
+
+
 .controller('contactCtrl', function($scope) {
 
 })
