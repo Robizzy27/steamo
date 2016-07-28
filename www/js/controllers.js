@@ -1,6 +1,7 @@
 angular.module('app.controllers', [])
 
 .controller('loadPageCtrl', function($scope) {
+  console.log('!!!!!!loadPageCtrl!!!!!!!!!!!')
 
 })
 
@@ -150,10 +151,18 @@ angular.module('app.controllers', [])
 
 .controller('loginCtrl', function($scope, LoginService, $ionicPopup, $state) {
     $scope.data = {};
+})
 
-    $scope.login = function() {
-        LoginService.loginUser($scope.data.username, $scope.data.password).success(function(data) {
-            $state.go('tab.dash');
+.controller('WelcomeCtrl', function($scope, $state, $q, UserService, LoginService, $ionicPopup, $ionicLoading) {
+  // This is the success callback from the login method
+  $scope.login = function(user,pass) {
+        $scope.data = {};
+
+        LoginService.loginUser(user,pass)
+        .success(function(data) {
+            //$state.go('tab.dash');
+            //$state.go('app.home');
+            $state.go('tabsController.home');
         }).error(function(data) {
             var alertPopup = $ionicPopup.alert({
                 title: 'Login failed!',
@@ -161,10 +170,9 @@ angular.module('app.controllers', [])
             });
         });
     }
-})
 
-.controller('WelcomeCtrl', function($scope, $state, $q, UserService, $ionicLoading) {
-  // This is the success callback from the login method
+
+
   var fbLoginSuccess = function(response) {
     if (!response.authResponse){
       fbLoginError("Cannot find the authResponse");
